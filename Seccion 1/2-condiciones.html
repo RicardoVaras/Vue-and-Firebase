@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+  <script src="../js/vue.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div class="jumbotron">
+      <!--Aqui Kiss esta contando cada vez que de click va ir contando--> 
+      <button v-on:click="kiss++" class="btn btn-primary">
+        Kiss👄 {{kiss}}
+      </button>
+      <!--Aqui indica que si es menor que 3 sera sapo--> 
+      <p v-if="kiss<3">
+        Sapo 🐸
+      </p>
+      <!--y si no cumple y se pasa de 3 se convierte en principe--> 
+      <p v-else>
+        Principe 🤴
+      </p>
+    </div>
+  </div>
+</body>
+<script>
+  var myApp = new Vue({
+    el:"#app",
+    data:{
+      kiss:0
+    }
+  });
+</script>
+</html>

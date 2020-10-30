@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+  <script src="../js/vue.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Lista de temas para estudiar</h1>
+        <hr>
+        <ul class="list-group">
+          <!--Aqui el vfor esta llamando a todos los elementos que estan en el arreglo lista--> 
+          <li class="list-group-item" v-for="elemento in lista">{{elemento}}</li>
+        </ul>
+        <hr>
+        <ul class="list-group">
+          <!--Aqui el vfor esta llamando a todos los elementos que estan en el arreglo persona--> 
+          <li class="list-group-item" v-for="persona in persona">{{persona.nombre}} - {{persona.edad}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  var myApp = new Vue({
+    el:"#app",
+    data:{
+      lista:["HTML5","CSS","VUE.JS","JAVASCRIPT","LARAVEL","PHP"],
+      persona:[
+        {nombre:"Roberto",edad:18},
+        {nombre:"Juana",edad:13},
+        {nombre:"Luis",edad:20}
+        ]
+    }
+  });
+</script>
+</html>

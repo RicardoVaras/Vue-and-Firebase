@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="row">
+        <!--Aqui el esta haciendo el llamado a un metodo y el metodo tiene una funcion que es botar--> 
+        <button class="btn btn-primary" v-on:click="votar()"> Votar</button>
+        <p>
+          Cantidad de Votos es <strong>{{votos}}</strong>
+        </p>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-6">
+          <input type="text" v-model="nombre" class="form-control">
+          <hr>
+          <input type="text" v-model="apellido" class="form-control">
+          <hr>
+          <label class="form-control">{{nombreCompleto | Mayus}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../js/vue.js"></script>
+<script src="app.js"></script>
+</html>

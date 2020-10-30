@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="row pt-3">
+        <h3>CRUD Manejando Arreglos</h3>
+        <div class="col-12">
+          <form>
+            <div class="form-group">
+              <label for="clave">Clave</label>
+              <input type="text" class="form-control" id="clave" v-model="clave">
+            </div>
+            <div class="form-group">
+              <label for="titulo">Titulo</label>
+              <input type="text" class="form-control" id="titulo" v-model="titulo">
+            </div>
+            <div class="form-group">
+              <label for="descripcion">Descripcion</label>
+              <input type="text" class="form-control" id="descripcion" v-model="descripcion">
+            </div>
+            <!--Aqui en el boton se esta llamando al evento que esta en el motodo y el prevent hace que la pagina no se recarge--> 
+            <button class="btn btn-primary" v-on:click.prevent="agregar(clave,titulo,descripcion)"><i class="far fa-save"> Agregar</i></button>
+          </form>
+          <hr>
+        </div>
+        <div class="col-12">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+            </div>
+            <input type="text" class="form-control" v-model="txtBuscar">
+          </div>
+          <ul class="list-group">
+            <!--Aqui el v-for esta listando a todo el arreglo y en el boton esta llamando a la funcion eliminar con un click--> 
+            <li v-for="item in listaFiltrada" class="list-group-item">{{item.clave}}-{{item.titulo}} : {{item.descripcion}} <button class="btn btn-danger" v-on:click="eliminar(item.clave)"><i class="fas fa-trash"></i></button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script src="init.js"></script>
+<script src="../js/vue.js"></script>
+<script src="app.js"></script>
+</html> 

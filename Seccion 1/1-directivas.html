@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+  <script src="../js/vue.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="jumbotron">
+        <input type="text" v-model:value="edad">
+        <!-- v-show esta llamando a la data que es edad--> 
+        <h1 v-show="edad>17">Eres mayor de edad</h1>
+      </div>
+    </div>
+  </div>  
+  <script>
+    var vm = new Vue({
+      el:"#app",
+      data:{
+        edad:18
+      }
+    });
+  </script>
+</body>
+</html>

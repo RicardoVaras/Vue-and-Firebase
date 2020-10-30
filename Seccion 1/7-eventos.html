@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+  <script src="../js/vue.js"></script>
+</head>
+
+<body onload="cargar()">
+  <p>
+    <h1 id="texto" onmouseover="In()" onmouseout="Out()">Funcionalidad de eventos</h1>
+  </p>
+  <input type="text" id="entrada" onkeypress="Write()">
+</body>
+
+<Script>
+  function cargar(){
+    alert("La pagina cargo correctamente");
+  }
+
+  function In(){
+    document.getElementById("texto").style.color="red";
+  }
+
+  function Out(){
+    document.getElementById("texto").style.color="black";
+  }
+
+  function Write(){
+    console.log("Entrada Detectada");
+  }
+</Script>
+</html>

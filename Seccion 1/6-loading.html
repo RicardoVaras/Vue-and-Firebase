@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+  <script src="../js/vue.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--Aqui el v-cloak esta haciendo el llamado al estilo y esta ocultando el mensaje pero el before esta mostrando 
+  algo antes que carge la funcion--> 
+  <style>
+    [v-cloak] >* {display:none}
+    [v-cloak]::before{
+      content: "";
+      display: block;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+      background-image: url(https://loading.io/mod/spinner/spinner/index.svg);
+    }
+  </style>
+  <!--Aqui el v-cloak esta llamando a un estilo--> 
+  <div id="app" v-cloak>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>{{mensaje}}</h1>
+      </div>
+    </div>
+  </div>  
+  <!--Aqui el esta esperando un click en el buton para que te muestre lo que esta en la funcion--> 
+  <button onclick="loadFunction()">Cargar App</button>
+<script>
+  function loadFunction(){
+    var vm = new Vue({
+      el:"#app",
+      data:{
+        mensaje:"Bienvenido al curso"
+      }
+    });
+  }
+</script>
+</body>
+</html>
